@@ -9,11 +9,15 @@ describe("app", async () => {
     expect(html).toContain("Number:");
   });
 
-  test("with playwirght", async () => {
+  test("with playwright", async () => {
     const page = await createPage();
     await page.goto(url("/"), { waitUntil: "hydration" });
     const text = await page.textContent("span");
     const num = Number(text);
     expect(num).toBeGreaterThan(0);
+    await page.click("button");
+    const newText = await page.textContent("span");
+    const newNum = Number(newText);
+    expect(newNum).not.toBe(num);
   });
 });
