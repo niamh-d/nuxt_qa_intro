@@ -11,6 +11,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@playwright/test": "^1.49.1",
     "nuxt": "^3.14.1592",
     "vue": "latest",
     "vue-router": "latest"
